@@ -6,7 +6,11 @@ const TURN_RATE = 0.06;
 const MIN_SPEED_TO_TURN = 0.5;
 
 
+
 function carClass() {
+  // var sound = document.getElementById("carSound");
+  // var play = 0;
+
   this.x = 75;
   this.y = 75;
   this.ang = 0;
@@ -18,11 +22,22 @@ function carClass() {
   this.keyHeld_Reverse = false;
   this.keyHeld_TurnLeft = false;
   this.keyHeld_TurnRight = false;
+  // this.sound = false;
 
   this.controlKeyUp;
   this.controlKeyRight;
   this.controlKeyDown;
   this.controlKeyLeft;
+
+  // this.playSound = function(){
+  //   if(play == 0){
+  //     play = 1;
+  //     sound.play();
+  //   }else{
+  //     play = 0;
+  //     sound.pause();
+  //   }
+  // }
 
   this.setupInput = function (upKey, rightKey, downKey, leftKey) {
     this.controlKeyUp = upKey;
@@ -57,6 +72,9 @@ function carClass() {
     
     if (this.keyHeld_Gas) {
       this.speed += DRIVE_POWER;
+      var audio = new Audio('carGas7.wav')
+      audio.play();
+      //  return false;
     }
     if (this.keyHeld_Reverse) {
       this.speed -= REVERSE_POWER;
