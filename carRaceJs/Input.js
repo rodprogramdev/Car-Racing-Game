@@ -8,6 +8,8 @@ const KEY_A = 65; //keyboard A
 const KEY_S = 83;// keyboard S
 const KEY_D =68 ;//keyboard D
 
+// const KEY_E =
+
 var mouseX = 0;
 var mouseY = 0;
 

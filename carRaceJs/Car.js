@@ -72,12 +72,14 @@ function carClass() {
     
     if (this.keyHeld_Gas) {
       this.speed += DRIVE_POWER;
-      var audio = new Audio('carGas7.wav')
+      var audio = new Audio('carGas10.wav')
       audio.play();
       //  return false;
     }
     if (this.keyHeld_Reverse) {
       this.speed -= REVERSE_POWER;
+      var audio = new Audio('carGas10.wav')
+      audio.play();
     }
     if (Math.abs(this.speed) > MIN_SPEED_TO_TURN) {
       if (this.keyHeld_TurnLeft) {
