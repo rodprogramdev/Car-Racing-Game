@@ -116,6 +116,8 @@
                 //   alert(whichCar.name + "Wins!");
                 // console.log(whichCar.name + "WINS!");
                 // loadLevel(levelList);
+                var audio = new Audio('esrom.wav')
+                audio.play();
                 nextLevel();
               }else if (tileHere != TRACK_ROAD) {
                      whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;

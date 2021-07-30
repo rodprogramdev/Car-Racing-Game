@@ -72,21 +72,35 @@ function carClass() {
     
     if (this.keyHeld_Gas) {
       this.speed += DRIVE_POWER;
-      var audio = new Audio('carGas10.wav')
-      audio.play();
+      // var audio = new Audio('carGas10.wav')
+      // audio.play();
       //  return false;
     }
     if (this.keyHeld_Reverse) {
       this.speed -= REVERSE_POWER;
-      var audio = new Audio('carGas10.wav')
+      var audio = new Audio('carGas10.wav');
       audio.play();
     }
     if (Math.abs(this.speed) > MIN_SPEED_TO_TURN) {
+      var audio = new Audio('Carskidding2.wav');
       if (this.keyHeld_TurnLeft) {
         this.ang -= TURN_RATE;
+        if(this.keyHeld_Gas){
+          audio.play();
+        }else{
+          audio.pause();
+        }
+        
+        
       }
+      
       if (this.keyHeld_TurnRight) {
         this.ang += TURN_RATE;
+        if(this.keyHeld_Gas){
+          audio.play();
+        }else{
+          audio.pause();
+        }
       }
     }
     this.x += Math.cos(this.ang) * this.speed;
